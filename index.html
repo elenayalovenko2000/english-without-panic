@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English without Panic</title>
+
+<style>
+:root {
+  --bg: #f9f8f6;
+  --accent: #e3d9cf;
+  --dark: #2c2c2c;
+  --white: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--dark);
+  line-height: 1.7;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 80px 20px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.hero img {
+  width: 100%;
+  border-radius: 24px;
+  box-shadow: 0 30px 60px rgba(0,0,0,.18);
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 34px;
+  margin-bottom: 30px;
+}
+
+p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 16px 34px;
+  background: var(--dark);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 16px;
+}
+
+.section {
+  background: var(--white);
+  border-radius: 30px;
+  margin-bottom: 60px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 25px;
+}
+
+.card {
+  background: var(--bg);
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.form {
+  background: var(--accent);
+  border-radius: 30px;
+}
+
+form {
+  max-width: 420px;
+  margin: auto;
+}
+
+input, textarea, button {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 14px;
+  border: none;
+  font-size: 16px;
+}
+
+button {
+  background: var(--dark);
+  color: white;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  opacity: .6;
+}
+
+@media(max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="container hero">
+  <div>
+    <h1>English without Panic</h1>
+    <p>
+      Английский язык без стресса, страха ошибок и внутреннего напряжения.  
+      Я помогаю заговорить спокойно — даже если раньше было «я всё понимаю, но молчу».
+    </p>
+    <a class="button" href="#form">Записаться на консультацию</a>
+  </div>
+
+  <!-- ТВОЁ ФОТО -->
+  <img src="me.jpg" alt="Репетитор английского языка">
+</section>
+
+<!-- ОБО МНЕ -->
+<section class="container section">
+  <h2>Обо мне</h2>
+  <p>
+    Меня зовут Елена. Я филолог, преподаватель английского языка и человек,  
+    который **сам живёт за границей** и прекрасно знает, как сложно адаптироваться  
+    в новой стране: язык, документы, общение, чувство одиночества и тревоги.
+  </p>
+  <p>
+    Я преподаю **живой, современный английский**, который реально используется в жизни:  
+    в магазине, у врача, на работе, в быту и в общении с людьми.
+  </p>
+  <p>
+    Моя особенность — я помогаю **преодолеть страх говорить**, тревожность,  
+    внутренние блоки и психоэмоциональные сложности **через изучение английского языка**.
+  </p>
+</section>
+
+<!-- ДЛЯ КОГО -->
+<section class="container section">
+  <h2>Кому подойдут занятия</h2>
+  <div class="cards">
+    <div class="card">🌍 Вы живёте за границей и чувствуете языковой барьер</div>
+    <div class="card">😔 Есть тревожность, панические состояния, страх ошибок</div>
+    <div class="card">🧠 Всё понимаете, но не можете начать говорить</div>
+    <div class="card">💬 Хотите мягкий, поддерживающий формат без давления</div>
+  </div>
+</section>
+
+<!-- КАК ПРОХОДЯТ ЗАНЯТИЯ -->
+<section class="container section">
+  <h2>Как проходят занятия</h2>
+  <div class="cards">
+    <div class="card">✔ Онлайн (Zoom / Google Meet)</div>
+    <div class="card">✔ Индивидуально под вашу ситуацию</div>
+    <div class="card">✔ Спокойный темп и поддержка</div>
+    <div class="card">✔ Фокус на разговор и уверенность</div>
+  </div>
+</section>
+
+<!-- ФОРМА -->
+<section class="container form" id="form">
+  <h2 style="text-align:center">Бесплатная консультация</h2>
+  <form onsubmit="sendForm(event)">
+    <input id="name" placeholder="Ваше имя" required>
+    <input id="contact" placeholder="Telegram / Email" required>
+    <textarea id="goal" placeholder="Ваша ситуация и цель"></textarea>
+    <button type="submit">Отправить заявку</button>
+  </form>
+</section>
+
+<footer>
+  © English without Panic · Онлайн · +380668714316
+</footer>
+
+<script>
+function sendForm(e) {
+  e.preventDefault();
+  alert("Спасибо 💛 Я свяжусь с вами в ближайшее время.");
+}
+</script>
+
+</body>
+</html>
