@@ -11,6 +11,7 @@
   --accent: #e3d9cf;
   --dark: #2c2c2c;
   --white: #ffffff;
+  --insta: #c13584; /* Добавили цвет инстаграма */
 }
 
 body {
@@ -55,7 +56,8 @@ p {
   opacity: 0.9;
 }
 
-.button {
+/* Стили для кнопок-ссылок */
+.btn-cta {
   display: inline-block;
   margin-top: 30px;
   padding: 16px 34px;
@@ -64,49 +66,41 @@ p {
   text-decoration: none;
   border-radius: 50px;
   font-size: 16px;
+  transition: 0.3s;
+}
+
+.btn-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .section {
   background: var(--white);
   border-radius: 30px;
   margin-bottom: 60px;
+  padding: 60px 40px; /* Добавили внутренние отступы */
+  text-align: center;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-  gap: 25px;
+/* Новый стиль для блока с Клубом */
+.club-box {
+  background: var(--accent); /* Выделим его цветом */
 }
 
-.card {
-  background: var(--bg);
-  padding: 30px;
-  border-radius: 20px;
+/* Ссылка на Инстаграм */
+.insta-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--insta);
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 20px;
+  border-bottom: 2px solid var(--insta);
+  transition: 0.3s;
 }
 
-.form {
-  background: var(--accent);
-  border-radius: 30px;
-}
-
-form {
-  max-width: 420px;
-  margin: auto;
-}
-
-input, textarea, button {
-  width: 100%;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 14px;
-  border: none;
-  font-size: 16px;
-}
-
-button {
-  background: var(--dark);
-  color: white;
-  cursor: pointer;
+.insta-link:hover {
+  opacity: 0.7;
 }
 
 footer {
@@ -208,5 +202,6 @@ function sendForm(e) {
 </body>
 
 </html>
+
 
 
