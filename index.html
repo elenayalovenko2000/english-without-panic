@@ -3,213 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English without Panic — Елена | Английский для жизни и карьеры</title>
+    <title>English without Panic — Елена | 10 лет опыта</title>
     <style>
         :root {
-            --bg: #f8fbff;      
-            --accent: #bbdefb;  
-            --dark: #0d47a1;    
-            --white: #ffffff;   
-            --insta: #c13584;   
-            --tiktok: #000000;
-            --success: #2e7d32;
-            --hot-pink: #ff4081;
-            --warning: #fff3e0;
+            --bg: #f8fbff; --dark: #0d47a1; --white: #ffffff; --accent: #bbdefb;
+            --success: #2e7d32; --hot-pink: #ff4081; --purple: #9c27b0; --gold: #fbc02d;
         }
+        body { margin: 0; font-family: "Inter", sans-serif; background: var(--bg); color: var(--dark); line-height: 1.6; }
+        .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
+        .section { background: var(--white); border-radius: 40px; padding: 50px 40px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+        h2 { text-align: center; font-size: 32px; margin-bottom: 30px; }
+        
+        .btn-cta { display: inline-block; padding: 15px 35px; background: var(--dark); color: white !important; text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s; margin: 5px; border: none; cursor: pointer; }
+        .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); filter: brightness(1.1); }
+        .btn-outline { background: transparent; border: 2px solid var(--dark); color: var(--dark) !important; }
+        
+        /* ГЕРОЙ */
+        .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; padding-top: 60px; }
+        .hero img { width: 100%; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
 
-        body {
-            margin: 0;
-            font-family: "Inter", system-ui, sans-serif;
-            background: var(--bg);
-            color: var(--dark);
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
+        /* МЕДИА-БЛОКИ */
+        .media-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin: 30px 0; }
+        .media-item { text-align: center; width: 130px; }
+        .media-item img { width: 100%; height: 180px; object-fit: cover; border-radius: 15px; margin-bottom: 10px; box-shadow: 0 8px 15px rgba(0,0,0,0.1); transition: 0.3s; }
+        .media-item img:hover { transform: translateY(-10px); }
 
-        .container { max-width: 1100px; margin: auto; padding: 60px 20px; }
+        /* ФАКТ */
+        .fact-box { background: #f3e5f5; border-radius: 30px; padding: 30px; display: flex; align-items: center; gap: 25px; border-left: 8px solid var(--purple); margin-bottom: 40px; }
 
-        /* ЯЗЫКОВОЙ ПЕРЕКЛЮЧАТЕЛЬ */
-        .lang-switcher {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            background: white;
-            padding: 10px 15px;
-            border-radius: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            display: flex;
-            gap: 10px;
-        }
-        .lang-switcher a { text-decoration: none; color: var(--dark); font-weight: bold; font-size: 13px; opacity: 0.5; }
-        .lang-switcher a.active { opacity: 1; border-bottom: 2px solid var(--dark); }
-
-        /* HERO */
-        .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-        .hero img { width: 100%; border-radius: 24px; box-shadow: 0 30px 60px rgba(13,71,161,0.15); }
-        h1 { font-size: 48px; margin-bottom: 20px; line-height: 1.2; }
-        h2 { font-size: 34px; margin-bottom: 40px; text-align: center; }
-
-        .badge { display: inline-block; background: var(--accent); padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: bold; margin-bottom: 10px; }
-
-        /* ПАНИКА */
-        .panic-section {
-            background: #fff0f0;
-            border: 2px dashed #ffcdd2;
-            border-radius: 30px;
-            padding: 40px;
-            margin: 40px 0;
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-
-        /* КНОПКИ */
-        .btn-cta {
-            display: inline-block;
-            padding: 18px 40px;
-            background: var(--dark);
-            color: white !important;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 18px;
-            transition: 0.3s;
-            font-weight: bold;
-            border: none;
-        }
-        .btn-cta:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-
-        .section { background: var(--white); border-radius: 40px; margin-bottom: 40px; padding: 50px 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
-
-        /* КАРТОЧКИ ОПЫТА */
-        .exp-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; text-align: center; margin-bottom: 40px; }
-        .exp-item { padding: 20px; background: white; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.02); }
-        .exp-item h3 { font-size: 32px; margin: 0; color: var(--dark); }
-
-        /* TED TALKS */
-        .ted-block { background: #1a1a1a; color: white; padding: 40px; border-radius: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-        .ted-tag { background: #e62b1e; color: white; padding: 2px 8px; border-radius: 4px; font-weight: bold; }
-
-        /* ТАБЫ */
-        .tabs-container { max-width: 800px; margin: 0 auto; }
-        .tabs input { display: none; }
-        .tabs label { padding: 12px 20px; background: #eee; margin-right: 5px; border-radius: 10px 10px 0 0; cursor: pointer; font-weight: bold; display: inline-block; }
-        .tabs input:checked + label { background: var(--dark); color: white; }
-        .tab-content { display: none; width: 100%; padding: 25px; border: 1px solid #eee; border-radius: 0 15px 15px 15px; box-sizing: border-box; }
-        #t1:checked ~ #c1, #t2:checked ~ #c2, #t3:checked ~ #c3 { display: block; }
-        .phrase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .phrase-item { border-bottom: 1px solid #f0f0f0; padding: 10px 0; }
+        /* КЛУБЫ */
+        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .card { padding: 35px; border-radius: 30px; background: #f9fbff; border-top: 6px solid var(--accent); text-align: center; }
 
         /* FAQ */
-        .faq-item { border-bottom: 1px solid #eee; }
-        .faq-item summary { padding: 20px; list-style: none; cursor: pointer; font-weight: bold; display: flex; justify-content: space-between; }
-        .faq-item summary::after { content: '＋'; }
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid #eee; background: white; margin-bottom: 10px; border-radius: 15px; }
+        .faq-item summary { padding: 20px; list-style: none; cursor: pointer; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        .faq-item summary::after { content: '＋'; color: var(--purple); }
+        .faq-item p { padding: 0 20px 20px; opacity: 0.8; margin: 0; }
 
-        @media(max-width: 800px) {
-            .hero, .ted-block, .panic-section, .exp-grid { grid-template-columns: 1fr; text-align: center; flex-direction: column; }
-            h1 { font-size: 32px; }
-            .phrase-grid { grid-template-columns: 1fr; }
-            .lang-switcher { top: auto; bottom: 20px; right: 50%; transform: translateX(50%); }
-        }
+        /* ТАБЫ */
+        .tabs { display: flex; flex-wrap: wrap; justify-content: center; }
+        .tabs input { display: none; }
+        .tabs label { padding: 12px 25px; background: #eee; margin: 5px; border-radius: 10px; cursor: pointer; font-weight: bold; }
+        .tabs input:checked + label { background: var(--dark); color: white; }
+        .tab-content { display: none; width: 100%; padding: 30px; border: 1px solid #eee; border-radius: 20px; background: white; margin-top: 10px; box-sizing: border-box; }
+        #t1:checked ~ #c1, #t2:checked ~ #c2, #t3:checked ~ #c3 { display: block; }
+        .phrase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+
+        @media(max-width: 800px) { .hero { grid-template-columns: 1fr; text-align: center; } .phrase-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
-<div class="lang-switcher">
-    <a href="index.html" class="active">RU</a>
-    <a href="#">UA</a>
-    <a href="#">EN</a>
-    <a href="#">DE</a>
-</div>
-
 <section class="container hero">
     <div>
-        <span class="badge">10+ лет опыта | CELTA certified</span>
+        <span style="background: var(--accent); padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: bold;">10+ лет опыта | CELTA Certified</span>
         <h1>English without Panic</h1>
-        <p>Я Елена, и я учу английскому тех, кто боится на нем говорить. Помогаю адаптироваться в новой стране, строить карьеру и забыть о страхе перед каждым звонком.</p>
-        <a href="https://t.me/E_l_e_n_a2000" class="btn-cta">Начать без стресса</a>
-    </div>
-    <img src="me.jpg" alt="Елена — ваш преподаватель">
-</section>
-
-<section class="container exp-grid">
-    <div class="exp-item"><h3>10+ лет</h3><p>в преподавании</p></div>
-    <div class="exp-item"><h3>💼</h3><p><b>Business English</b> для топов и специалистов</p></div>
-    <div class="exp-item"><h3>🧠</h3><p><b>Soft Skills</b> и психология общения</p></div>
-</section>
-
-<section class="container">
-    <div class="panic-section">
-        <div style="font-size: 50px;">🫂</div>
-        <div>
-            <h3 style="margin: 0 0 10px 0; color: #c62828;">Вас сковывает страх, когда нужно говорить?</h3>
-            <p style="margin: 0;">Паническая атака перед кассой или онемение на совещании — это не нехватка знаний, а барьер, который мы снимем вместе. Я создаю территорию, где ошибаться — это не стыдно, а полезно.</p>
-        </div>
-    </div>
-</section>
-
-<section class="container section ted-block">
-    <div>
-        <h2>Разбираем <span class="ted-tag">TED</span> Talks</h2>
-        <p>Мои уроки — это не зубрежка. Мы смотрим и обсуждаем выступления мировых спикеров. Это позволяет:</p>
-        <ul>
-            <li>Снять стресс через интересные темы</li>
-            <li>Учить живой, современный язык</li>
-            <li>Прокачивать Soft Skills и уверенность в себе</li>
-        </ul>
-    </div>
-    <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
-        <p style="font-style: italic; margin: 0;">"Мы разбирали видео про лидерство, и я впервые за 5 лет забыла, что говорю на иностранном языке. Страх просто исчез, потому что мне было ВАЖНО высказаться."</p>
-    </div>
-</section>
-
-<section class="container section" style="background: var(--warning); border-left: 8px solid #ffb300;">
-    <h2 style="text-align: left; margin-bottom: 20px;">🇺🇸 American vs British 🇬🇧</h2>
-    <p>Я учу понимать разницу: почему в Нью-Йорке просят <b>"the check"</b>, а в Лондоне <b>"the bill"</b>. И почему не стоит называть свои брюки <i>"pants"</i> в Англии, если не хотите вогнать местных в краску!</p>
-</section>
-
-<section class="container section">
-    <h2>🎁 Ваш "Emergency Kit": 50 фраз</h2>
-    <div class="tabs-container">
-        <div class="tabs">
-            <input type="radio" name="tabs" id="t1" checked>
-            <label for="t1">🛒 Магазин</label>
-            <input type="radio" name="tabs" id="t2">
-            <label for="t2">🏦 Банк</label>
-            <input type="radio" name="tabs" id="t3">
-            <label for="t3">🩺 Врач</label>
-            <div class="tab-content" id="c1"><div class="phrase-grid">
-                <div class="phrase-item"><b>Is this on sale?</b><span>Это со скидкой?</span></div>
-                <div class="phrase-item"><b>I'll pay by card.</b><span>Оплачу картой.</span></div>
-            </div></div>
-            <div class="tab-content" id="c2"><div class="phrase-grid">
-                <div class="phrase-item"><b>Open an account.</b><span>Открыть счет.</span></div>
-                <div class="phrase-item"><b>What are the fees?</b><span>Какая комиссия?</span></div>
-            </div></div>
-            <div class="tab-content" id="c3"><div class="phrase-grid">
-                <div class="phrase-item"><b>I have a sharp pain.</b><span>У меня острая боль.</span></div>
-                <div class="phrase-item"><b>I need an appointment.</b><span>Мне нужно к врачу.</span></div>
-            </div></div>
-        </div>
-    </div>
-    <div style="text-align: center; margin-top: 30px;">
-        <a href="https://t.me/E_l_e_n_a2000?text=Привет! Хочу PDF-гайд" class="btn-cta" style="background: var(--success);">📥 Скачать полный PDF (50 фраз)</a>
-    </div>
-</section>
-
-<section class="container section">
-    <h2>Частые вопросы</h2>
-    <details class="faq-item"><summary>Подойдет ли мне Business English?</summary><p>Да, если вам нужно вести переписку, участвовать в митингах или проходить интервью в международные компании.</p></details>
-    <details class="faq-item"><summary>Как проходят созвоны Speaking Club?</summary><p>Это бережные онлайн-встречи, где мы обсуждаем книги (например, "Atomic Habits") и поддерживаем друг друга.</p></details>
-</section>
-
-<footer style="text-align: center; padding: 60px 20px;">
-    <div style="margin-bottom: 20px;">
-        <a href="https://www.instagram.com/english_with_lenochka" style="color: var(--insta); margin: 0 15px; text-decoration: none; font-weight: bold;">Instagram</a>
-        <a href="https://www.tiktok.com/@english.with.lenochka" style="color: var(--tiktok); margin: 0 15px; text-decoration: none; font-weight: bold;">TikTok</a>
-    </div>
-    <p style="opacity: 0.6;">© English without Panic · 2026 · Елена</p>
-</footer>
-
-</body>
-</html>
+        <p>Я Елена — ваш проводник в мир свободного английского. Помогаю преодолеть панику, подгото
