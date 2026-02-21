@@ -3,44 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English without Panic — Елена | 10 лет опыта</title>
+    <title>English without Panic — Елена | 10 лет опыта | Преподаватель английского</title>
     <style>
         :root {
             --bg: #f8fbff; --dark: #0d47a1; --white: #ffffff; --accent: #bbdefb;
             --success: #2e7d32; --hot-pink: #ff4081; --purple: #9c27b0; --gold: #fbc02d;
         }
-        body { margin: 0; font-family: "Inter", sans-serif; background: var(--bg); color: var(--dark); line-height: 1.6; }
+        body { margin: 0; font-family: "Inter", -apple-system, sans-serif; background: var(--bg); color: var(--dark); line-height: 1.6; }
         .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
         .section { background: var(--white); border-radius: 40px; padding: 50px 40px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
         h2 { text-align: center; font-size: 32px; margin-bottom: 30px; }
         
-        .btn-cta { display: inline-block; padding: 15px 35px; background: var(--dark); color: white !important; text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s; margin: 5px; border: none; cursor: pointer; }
+        /* КНОПКИ */
+        .btn-cta { display: inline-block; padding: 15px 35px; background: var(--dark); color: white !important; text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s; margin: 8px; border: none; cursor: pointer; text-align: center; }
         .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); filter: brightness(1.1); }
         .btn-outline { background: transparent; border: 2px solid var(--dark); color: var(--dark) !important; }
         
         /* ГЕРОЙ */
-        .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; padding-top: 60px; }
+        .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; padding: 60px 20px; }
         .hero img { width: 100%; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
 
-        /* МЕДИА-БЛОКИ */
-        .media-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin: 30px 0; }
-        .media-item { text-align: center; width: 130px; }
-        .media-item img { width: 100%; height: 180px; object-fit: cover; border-radius: 15px; margin-bottom: 10px; box-shadow: 0 8px 15px rgba(0,0,0,0.1); transition: 0.3s; }
-        .media-item img:hover { transform: translateY(-10px); }
+        /* ПАНИКА */
+        .panic-box { background: #fff0f0; border-radius: 30px; padding: 30px; display: flex; align-items: center; gap: 25px; border-left: 8px solid #ffcdd2; margin-bottom: 40px; }
 
-        /* ФАКТ */
-        .fact-box { background: #f3e5f5; border-radius: 30px; padding: 30px; display: flex; align-items: center; gap: 25px; border-left: 8px solid var(--purple); margin-bottom: 40px; }
+        /* МЕДИА СЕТКА (ФИЛЬМЫ / КНИГИ) */
+        .media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 20px; margin: 30px 0; }
+        .media-item { text-align: center; font-size: 14px; }
+        .media-item img { width: 100%; height: 200px; object-fit: cover; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: 0.3s; margin-bottom: 10px; }
+        .media-item img:hover { transform: translateY(-8px); box-shadow: 0 12px 20px rgba(0,0,0,0.15); }
 
-        /* КЛУБЫ */
+        /* ГАРРИ ПОТТЕР ФАКТ */
+        .fact-box { background: #f3e5f5; border-radius: 30px; padding: 30px; display: flex; align-items: center; gap: 20px; border-right: 8px solid var(--purple); margin: 40px 0; }
+
+        /* КАРТОЧКИ КЛУБОВ */
         .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
         .card { padding: 35px; border-radius: 30px; background: #f9fbff; border-top: 6px solid var(--accent); text-align: center; }
-
-        /* FAQ */
-        .faq-container { max-width: 800px; margin: 0 auto; }
-        .faq-item { border-bottom: 1px solid #eee; background: white; margin-bottom: 10px; border-radius: 15px; }
-        .faq-item summary { padding: 20px; list-style: none; cursor: pointer; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
-        .faq-item summary::after { content: '＋'; color: var(--purple); }
-        .faq-item p { padding: 0 20px 20px; opacity: 0.8; margin: 0; }
 
         /* ТАБЫ */
         .tabs { display: flex; flex-wrap: wrap; justify-content: center; }
@@ -51,13 +48,174 @@
         #t1:checked ~ #c1, #t2:checked ~ #c2, #t3:checked ~ #c3 { display: block; }
         .phrase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
 
-        @media(max-width: 800px) { .hero { grid-template-columns: 1fr; text-align: center; } .phrase-grid { grid-template-columns: 1fr; } }
+        /* FAQ */
+        .faq-item { border-bottom: 1px solid #eee; background: white; margin-bottom: 10px; border-radius: 15px; }
+        .faq-item summary { padding: 20px; list-style: none; cursor: pointer; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        .faq-item summary::after { content: '＋'; color: var(--purple); }
+        .faq-item p { padding: 0 20px 20px; opacity: 0.8; margin: 0; }
+
+        @media(max-width: 800px) {
+            .hero { grid-template-columns: 1fr; text-align: center; }
+            .panic-box, .fact-box { flex-direction: column; text-align: center; }
+            .phrase-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
 <section class="container hero">
     <div>
-        <span style="background: var(--accent); padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: bold;">10+ лет опыта | CELTA Certified</span>
+        <span style="background: var(--accent); padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: bold;">10+ ЛЕТ ОПЫТА | CELTA</span>
         <h1>English without Panic</h1>
-        <p>Я Елена — ваш проводник в мир свободного английского. Помогаю преодолеть панику, подгото
+        <p>Бережное обучение для тех, кто устал бояться английского. Я Елена, и я помогу вам заговорить уверенно — для жизни в новой стране или карьеры в Big Tech.</p>
+        <div style="margin-top: 25px;">
+            <a href="https://t.me/E_l_e_n_a2000" class="btn-cta">Записаться на урок</a>
+            <a href="https://t.me/E_l_e_n_a2000?text=Хочу пройти тест" class="btn-cta btn-outline">Проверить уровень</a>
+        </div>
+    </div>
+    <div style="text-align: right;"><img src="me.jpg" alt="Елена"></div>
+</section>
+
+<section class="container">
+    <div class="panic-box">
+        <div style="font-size: 40px;">🫂</div>
+        <div>
+            <h3 style="margin: 0; color: #c62828;">Знакома паника при звонке или в магазине?</h3>
+            <p style="margin: 5px 0 0 0;">Когда слова застревают в горле, а в голове пустота — это не проблема знаний, это стресс. Я помогу его снять. На моих уроках мы учим не правила, а уверенность.</p>
+        </div>
+    </div>
+</section>
+
+<section class="container section">
+    <h2>Учимся по фильмам и TED Talks</h2>
+    <p style="text-align:center;">Разбираем живой язык, сленг и Soft Skills (навыки презентации и переговоров):</p>
+    <div class="media-grid">
+        <div class="media-item">
+            <img src="https://m.media-amazon.com/images/M/MV5BNDVkYjU0MzctMWRmZi00NTkxLTgwNjItOWVhYjZlY2VlMWFmXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg" alt="Friends">
+            <b>Friends</b>
+        </div>
+        <div class="media-item">
+            <img src="https://m.media-amazon.com/images/M/MV5BMjA3NTEwOTMxMV5BMl5BanBnXkFtZTgwMjMyODgxMzE@._V1_.jpg" alt="Sherlock">
+            <b>Sherlock</b>
+        </div>
+        <div class="media-item">
+            <img src="https://m.media-amazon.com/images/M/MV5BY2FmZTY5YTktOWRlYy00NjQ1LThhNjMtZGRkN2RmOTllOTAxXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" alt="The Big Bang Theory">
+            <b>Big Bang Theory</b>
+        </div>
+        <div class="media-item">
+            <img src="https://m.media-amazon.com/images/M/MV5BZjQ0ZDI3Y2MtZGY0Mi00ZGNhLWI0ZWMtOTJiMjc1MDE0OTUxXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg" alt="The Devil Wears Prada">
+            <b>The Devil Wears Prada</b>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+    <div class="fact-box">
+        <div>
+            <h3 style="margin: 0;">Интересный факт! ✨</h3>
+            <p style="margin: 5px 0 0 0;"><b>70-80% людей</b> в мире сделали свои первые шаги в английском благодаря книгам про <b>Harry Potter</b>. Мы используем этот же принцип магии и интереса на каждом занятии!</p>
+        </div>
+        <div style="font-size: 50px;">⚡</div>
+    </div>
+</section>
+
+<section class="container section" style="background: #fffdf0;">
+    <h2>Наш Book Club: от Agatha Christie до Non-fiction</h2>
+    <div class="media-grid">
+        <div class="media-item">
+            <img src="https://m.media-amazon.com/images/I/91bYsX41DVL.jpg" alt="Atomic Habits">
+            <b>Atomic Habits</b>
+        </div>
+        <div class="media-item">
+            <img src="https://m.media-amazon.com/images/I/71Yf+XmJ2PL.jpg" alt="Agatha Christie">
+            <b>Agatha Christie</b>
+        </div>
+        <div class="media-item">
+            <img src="https://m.media-amazon.com/images/I/81af+S7t1zL.jpg" alt="Great Gatsby">
+            <b>The Great Gatsby</b>
+        </div>
+        <div class="media-item">
+            <img src="https://m.media-amazon.com/images/I/81A-97L0ToL.jpg" alt="Little Women">
+            <b>Little Women</b>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="https://t.me/E_l_e_n_a2000?text=Хочу в книжный клуб" class="btn-cta" style="background: var(--purple);">Вступить в Book Club</a>
+    </div>
+</section>
+
+<section class="container section">
+    <h2>🎁 Подарок: Ваш "Щит" от паники (50 фраз)</h2>
+    <div class="tabs">
+        <input type="radio" name="tabs" id="t1" checked>
+        <label for="t1">🛒 В магазине</label>
+        <input type="radio" name="tabs" id="t2">
+        <label for="t2">🏦 В банке</label>
+        <input type="radio" name="tabs" id="t3">
+        <label for="t3">🩺 У врача</label>
+        <div class="tab-content" id="c1"><div class="phrase-grid">
+            <div><b>Is this on sale?</b><br><small>Это со скидкой?</small></div>
+            <div><b>I'll pay by card.</b><br><small>Оплачу картой.</small></div>
+        </div></div>
+        <div class="tab-content" id="c2"><div class="phrase-grid">
+            <div><b>Open an account.</b><br><small>Открыть счет.</small></div>
+            <div><b>What are the fees?</b><br><small>Какая комиссия?</small></div>
+        </div></div>
+        <div class="tab-content" id="c3"><div class="phrase-grid">
+            <div><b>I have a sharp pain.</b><br><small>У меня острая боль.</small></div>
+            <div><b>Need an appointment.</b><br><small>Нужно записаться.</small></div>
+        </div></div>
+    </div>
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="https://t.me/E_l_e_n_a2000?text=Привет! Хочу PDF-гайд" class="btn-cta" style="background: var(--success);">📥 Скачать полный PDF-гайд</a>
+    </div>
+</section>
+
+<section class="container section" style="background: #f0f7ff;">
+    <h2>Speaking Club & Business English</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>💬 Speaking Club</h3>
+            <p>Безопасное место, где мы обсуждаем TED Talks и психологию. Ошибаться здесь — нормально.</p>
+            <a href="https://t.me/E_l_e_n_a2000?text=Хочу в Speaking Club" class="btn-cta">Записаться в клуб</a>
+        </div>
+        <div class="card">
+            <h3>💼 Business English</h3>
+            <p>10 лет опыта в корпоративном обучении. Переговоры, презентации и софт-скиллы на английском.</p>
+            <a href="https://t.me/E_l_e_n_a2000?text=Бизнес-английский" class="btn-cta">Хочу Business English</a>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+    <h2>Вопросы и ответы</h2>
+    <div style="max-width: 800px; margin: 0 auto;">
+        <details class="faq-item">
+            <summary>Как проходят занятия?</summary>
+            <p>Онлайн в Zoom/Meet. 80% времени говорите вы. Никаких скучных учебников — только живые статьи, видео и ваши реальные кейсы.</p>
+        </details>
+        <details class="faq-item">
+            <summary>Есть ли группы?</summary>
+            <p>Да, мини-группы до 4 человек для максимального комфорта и практики.</p>
+        </details>
+        <details class="faq-item">
+            <summary>Как оплатить из Европы/США?</summary>
+            <p>Принимаю оплату через Wise, PayPal, карты зарубежных и местных банков. Все официально и удобно.</p>
+        </details>
+        <details class="faq-item">
+            <summary>Вы готовите к интервью?</summary>
+            <p>Да! В рамках Business English мы прорабатываем ваше резюме и проводим "репетицию" собеседования.</p>
+        </details>
+    </div>
+</section>
+
+<footer style="text-align: center; padding: 60px 20px;">
+    <div style="margin-bottom: 20px;">
+        <a href="https://www.instagram.com/english_with_lenochka" style="color: var(--dark); margin: 0 15px; text-decoration: none; font-weight: bold;">Instagram</a>
+        <a href="https://www.tiktok.com/@english.with.lenochka" style="color: var(--dark); margin: 0 15px; text-decoration: none; font-weight: bold;">TikTok</a>
+    </div>
+    <p>© English without Panic · 2026 · Елена — ваш бережный эксперт в английском</p>
+</footer>
+
+</body>
+</html>
